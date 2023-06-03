@@ -1,0 +1,40 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "Дипломная работа Парахиной Натальи",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint .",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parakhina-natalya/movies-explorer-api.git"
+  },
+  "keywords": [],
+  "author": "Natalya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parakhina-natalya/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/parakhina-natalya/movies-explorer-api#readme",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-plugin-react": "^7.32.2",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "express": "^4.18.2",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.2.2",
+    "mongoose-type-url": "^2.1.0",
+    "validator": "^13.9.0",
+    "winston": "^3.9.0"
+  }
+}
