@@ -37,14 +37,6 @@ const postMovie = (req, res, next) => {
     });
 };
 
-// const getMovies = (req, res, next) => {
-//   Movie.find()
-//     .then((movies) => {
-//       res.send(movies.reverse());
-//     })
-//     .catch(next);
-// };
-
 const getMovies = (req, res, next) => {
   Movie.find({ owner: req.user._id })
     .then((movies) => {

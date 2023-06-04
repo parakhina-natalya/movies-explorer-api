@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 require('mongoose-type-url');
+const { urlRegex } = require('../utils/constants');
 
 const movieSchema = new mongoose.Schema(
   {
@@ -27,7 +28,7 @@ const movieSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Поле "image" должно быть заполнено'],
       validate: {
-        validator: (v) => /https?:\/\/(www\.)?[0-9a-z-.]*\.[a-z]*\/?([0-9a-z-._~:/?#[]@!$&'\(\)\*\+,;=]*)?#?/i.test(v),
+        validator: (v) => urlRegex.test(v),
         message: 'Неправильный формат ссылки',
       },
     },
@@ -35,7 +36,7 @@ const movieSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Поле "trailerLink" должно быть заполнено'],
       validate: {
-        validator: (v) => /https?:\/\/(www\.)?[0-9a-z-.]*\.[a-z]*\/?([0-9a-z-._~:/?#[]@!$&'\(\)\*\+,;=]*)?#?/i.test(v),
+        validator: (v) => urlRegex.test(v),
         message: 'Неправильный формат ссылки',
       },
     },
@@ -43,7 +44,7 @@ const movieSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Поле "thumbnail" должно быть заполнено'],
       validate: {
-        validator: (v) => /https?:\/\/(www\.)?[0-9a-z-.]*\.[a-z]*\/?([0-9a-z-._~:/?#[]@!$&'\(\)\*\+,;=]*)?#?/i.test(v),
+        validator: (v) => urlRegex.test(v),
         message: 'Неправильный формат ссылки',
       },
     },
