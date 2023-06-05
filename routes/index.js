@@ -8,7 +8,6 @@ const NotFoundError = require('../utils/errors/notFound');
 
 const { createUser, login } = require('../controllers/users');
 
-// ------------------ регистрация ------
 router.post('/signup', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
@@ -17,7 +16,6 @@ router.post('/signup', celebrate({
   }),
 }), createUser);
 
-// ------------ вход -----------
 router.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
@@ -28,7 +26,6 @@ router.post('/signin', celebrate({
 router.use('/users', auth, usersRouter);
 router.use('/movies', auth, moviesRouter);
 
-// ---------------404--------------------
 router.use('*', (req, res, next) => {
   next(new NotFoundError('Страница не найдена'));
 });

@@ -1,13 +1,14 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
 
-const { NODE_ENV, JWT_SECRET } = process.env;
+const User = require('../models/user');
 
 const ValidationError = require('../utils/errors/validation');
 const NotFoundError = require('../utils/errors/notFound');
 const ConflictingRequest = require('../utils/errors/conflictingRequest');
 const UnauthorizedError = require('../utils/errors/unauthorized');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const createUser = (req, res, next) => {
   const {
@@ -63,15 +64,6 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
-// -------------getUsers удалить потом---------
-const getUsers = (req, res, next) => {
-  User.find()
-    .then((users) => {
-      res.send(users);
-    })
-    .catch(next);
-};
-
 const getUserInfo = (req, res, next) => {
   User.findById(req.user._id)
     .orFail(() => {
@@ -112,7 +104,6 @@ const updateUserInfo = (req, res, next) => {
 module.exports = {
   createUser,
   login,
-  getUsers,
   updateUserInfo,
   getUserInfo,
 };

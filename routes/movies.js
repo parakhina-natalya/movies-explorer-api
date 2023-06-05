@@ -8,12 +8,8 @@ const {
   deleteMovie,
 } = require('../controllers/movies');
 
-// GET /movies возвращает все сохранённые текущим пользователем фильмы
 moviesRouter.get('/', getMovies);
 
-// POST /movies создаёт фильм с переданными в теле
-// country, director, duration, year, description,
-// image, trailer, nameRU, nameEN и thumbnail, movieId
 moviesRouter.post('/', celebrate({
   body: Joi.object().keys({
     country: Joi.string().required(),
@@ -30,7 +26,6 @@ moviesRouter.post('/', celebrate({
   }),
 }), postMovie);
 
-// DELETE /movies/_id удаляет сохранённый фильм по id
 moviesRouter.delete('/:_id', celebrate({
   params: Joi.object().keys({
     _id: Joi.string().required().hex().length(24),
