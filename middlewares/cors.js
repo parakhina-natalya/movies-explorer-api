@@ -1,7 +1,6 @@
 const allowedCors = [
-  'diploma.parakhina.nomoredomains.rocks',
-  'api.diploma.parakhina.nomoredomains.rocks',
-  'localhost:3000',
+  'http://diploma.parakhina.nomoredomains.rocks',
+  'https://diploma.parakhina.nomoredomains.rocks',
 ];
 
 const cors = ((req, res, next) => {
