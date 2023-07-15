@@ -11,6 +11,7 @@ https://github.com/parakhina-natalya/movies-explorer-api
 
 ## Ссылки на проект
 IP  84.201.176.15
+Frontend diploma.parakhina.nomoredomains.rocks
 Backend  api.diploma.parakhina.nomoredomains.rocks
 
 ## Используемые технологии
@@ -20,7 +21,3 @@ express.js
 MongoDB
 Postman
 Обработка ошибок
-
-## Планы на будущее
-
-Написать фронтенд часть и взаимодействие с ней.

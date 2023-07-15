@@ -65,10 +65,6 @@ const movieSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Поле "nameEN" должно быть заполнено'],
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
   },
   { versionKey: false },
 );

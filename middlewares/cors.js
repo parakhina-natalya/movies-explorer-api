@@ -1,4 +1,5 @@
 const allowedCors = [
+  'http://localhost:3005/',
   'http://diploma.parakhina.nomoredomains.rocks',
   'https://diploma.parakhina.nomoredomains.rocks',
 ];

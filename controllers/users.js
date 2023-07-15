@@ -93,6 +93,10 @@ const updateUserInfo = (req, res, next) => {
       });
     })
     .catch((err) => {
+      if (err.code === 11000) {
+        next(new ConflictingRequest('Пользователь уже существует'));
+        return;
+      }
       if (err.name === 'ValidationError') {
         next(new ValidationError('Переданы некорректные данные'));
       } else {
